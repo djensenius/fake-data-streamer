@@ -2,6 +2,8 @@
 
 This project is a simple Node.js application that streams fake weather data to connected clients. It simulates weather conditions such as temperature, humidity, and general weather conditions.
 
+This is used for a demo for the [Upscale Conf 2024](https://www.upscaleconf.com).
+
 ## Project Structure
 
 ```
