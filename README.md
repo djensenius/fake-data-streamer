@@ -29,13 +29,13 @@ weather-data-streamer
 1. Clone the repository:
 
    ```
-   git clone https://github.com/yourusername/weather-data-streamer.git
+   git clone https://github.com/djensenius/fake-data-streamer.git
    ```
 
 2. Navigate to the project directory:
 
    ```
-   cd weather-data-streamer
+   cd fake-data-streamer
    ```
 
 3. Install the dependencies:
