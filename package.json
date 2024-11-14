@@ -9,6 +9,8 @@
     "dev": "ts-node-dev src/app.ts"
   },
   "dependencies": {
+    "@types/cors": "^2.8.17",
+    "cors": "^2.8.5",
     "express": "^4.17.1"
   },
   "devDependencies": {

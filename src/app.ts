@@ -1,7 +1,9 @@
 import express from 'express';
 import { generateFakeWeatherData, generateUsersByTimezone } from './data/fakeData';
+import cors from 'cors';
 
 const app = express();
+app.use(cors());
 const PORT = process.env.PORT || 3000;
 
 interface Data {
@@ -42,16 +44,17 @@ setInterval(() => {
   }
 }, 1000);
 
-
 app.get('/', (req, res) => {
-  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Content-Type', 'text/event-stream');
   res.setHeader('Cache-Control', 'no-cache');
   res.setHeader('Connection', 'keep-alive');
+  res.flushHeaders(); // Ensure headers are sent immediately
+
   console.log('requesting data');
 
   const interval = setInterval(() => {
     console.log('Interval?');
-    res.write(JSON.stringify(data) + '\n');
+    res.write(`data: ${JSON.stringify(data)}\n\n`);
     console.log('writing data to response');
     console.log(data);
   }, 1000);
